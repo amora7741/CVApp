@@ -42,7 +42,7 @@ function App() {
   return (
     <>
       <InfoContainer>
-        {isEditMode && (
+        {isEditMode ? (
           <div className='forms'>
             <h1>CV Application</h1>
             <form onSubmit={handleSubmit}>
@@ -78,9 +78,8 @@ function App() {
               {currentSection === 2 && <button type='submit'>Submit</button>}
             </form>
           </div>
-        )}
-        {!isEditMode && (
-          <div>
+        ) : (
+          <div className='cvContainer'>
             <DisplayInfo {...cvInfo} />
             <button onClick={toggleEditMode}>Edit</button>
           </div>

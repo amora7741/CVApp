@@ -2,7 +2,7 @@ import React from 'react';
 
 function DisplayInfo({ generalInfo, educationalInfo, practicalInfo }) {
   return (
-    <div>
+    <div className='cvPage'>
       <h1>Submitted Information</h1>
       <div>
         <h3>General Information</h3>
