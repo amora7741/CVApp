@@ -8,35 +8,57 @@ function EducationalInfo({ educationalInfo, onChange }) {
 
   return (
     <section className='educationalInfo'>
-      <input
-        type='text'
-        name='schoolName'
-        value={educationalInfo.schoolName || ''}
-        onChange={handleChange}
-        placeholder='School Name'
-      />
-      <input
-        type='text'
-        name='studyTitle'
-        value={educationalInfo.studyTitle || ''}
-        onChange={handleChange}
-        placeholder='Study Title'
-      />
-      <input
-        type='text'
-        name='studyStart'
-        value={educationalInfo.studyStart || ''}
-        onChange={handleChange}
-        placeholder='Start date'
-        onFocus={(e) => (e.target.type = 'date')}
-        onBlur={(e) => (e.target.type = 'text')}
-      />
-      <input
-        type='date'
-        name='studyEnd'
-        value={educationalInfo.studyEnd || ''}
-        onChange={handleChange}
-      />
+      <div className='fieldholder'>
+        <input
+          id='schoolName'
+          type='text'
+          name='schoolName'
+          value={educationalInfo.schoolName || ''}
+          onChange={handleChange}
+          required
+        />
+        <label htmlFor='schoolName'>School Name</label>
+      </div>
+
+      <div className='fieldholder'>
+        <input
+          id='studyTitle'
+          type='text'
+          name='studyTitle'
+          value={educationalInfo.studyTitle || ''}
+          onChange={handleChange}
+          required
+        />
+        <label htmlFor='studyTitle'>Study Title</label>
+      </div>
+
+      <div className='fieldholder'>
+        <input
+          id='studyStart'
+          type='date'
+          name='studyStart'
+          value={educationalInfo.studyStart || ''}
+          onChange={handleChange}
+          required
+        />
+        <label htmlFor='studyStart' className='datelabel'>
+          Study Start Date
+        </label>
+      </div>
+
+      <div className='fieldholder'>
+        <input
+          id='studyEnd'
+          type='date'
+          name='studyEnd'
+          value={educationalInfo.studyEnd || ''}
+          onChange={handleChange}
+          required
+        />
+        <label htmlFor='studyEnd' className='datelabel'>
+          Study End Date
+        </label>
+      </div>
     </section>
   );
 }
