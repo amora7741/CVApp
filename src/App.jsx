@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import GeneralInfo from './components/GeneralInfo';
-// import SchoolInfo from './components/SchoolInfo'; // Uncomment this
+import EducationalInfo from './components/EducationalInfo'; // Uncomment this
 // import PracticalExperience from './components/PracticalExperience'; // Uncomment this
 import DisplayInfo from './components/DisplayInfo';
 import InfoContainer from './components/InfoContainer';
@@ -10,7 +10,7 @@ function App() {
   const [isEditMode, setIsEditMode] = useState(true);
   const [cvInfo, setCvInfo] = useState({
     generalInfo: {},
-    schoolInfo: {},
+    educationalInfo: {},
     practicalExperience: {},
   });
   const [currentSection, setCurrentSection] = useState(0);
@@ -53,9 +53,9 @@ function App() {
                 />
               )}
               {currentSection === 1 && (
-                <SchoolInfo
-                  schoolInfo={cvInfo.schoolInfo}
-                  onChange={(info) => handleInfoChange('schoolInfo', info)}
+                <EducationalInfo
+                  educationalInfo={cvInfo.educationalInfo}
+                  onChange={(info) => handleInfoChange('educationalInfo', info)}
                 />
               )}
               {currentSection === 2 && (
@@ -67,7 +67,6 @@ function App() {
                 />
               )}
 
-              {/* Navigation buttons */}
               {currentSection > 0 && (
                 <button type='button' onClick={handlePreviousSection}>
                   Previous
