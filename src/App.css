@@ -158,7 +158,7 @@ hr {
 }
 
 .infosection {
-  padding: 10px 0px;
+  padding: 20px 0px;
 }
 
 .separator {
@@ -166,6 +166,7 @@ hr {
   align-items: center;
   text-align: center;
   gap: 10px;
+  margin-bottom: 10px;
 }
 
 .separator::before,
@@ -178,4 +179,12 @@ hr {
 #edit {
   width: 30%;
   align-self: center;
+}
+
+ul {
+  padding-left: 3rem;
+}
+
+li {
+  overflow-wrap: break-word; /* Standard property */
 }

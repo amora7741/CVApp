@@ -29,12 +29,18 @@ function DisplayInfo({ generalInfo, educationalInfo, practicalInfo }) {
         </div>
         <div className='infosection'>
           <h3 className='pink separator'>Practical Experience</h3>
-          <p>Company Name: {practicalInfo.companyName}</p>
-          <p>Position Title: {practicalInfo.positionTitle}</p>
-          <p>Responsibilities: {practicalInfo.responsibilities}</p>
           <p>
-            Worked from {practicalInfo.startDate} to {practicalInfo.endDate}
+            <b>{practicalInfo.positionTitle}</b> <span className='pink'>◆</span>{' '}
+            {practicalInfo.companyName}
           </p>
+          <p>
+            <em>
+              {practicalInfo.startDate} to {practicalInfo.endDate}
+            </em>
+          </p>
+          <ul>
+            <li>{practicalInfo.responsibilities}</li>
+          </ul>
         </div>
       </main>
     </div>
