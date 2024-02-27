@@ -6,6 +6,9 @@ import PracticalInfo from './components/PracticalInfo'; // Uncomment this
 import DisplayInfo from './components/DisplayInfo';
 import InfoContainer from './components/InfoContainer';
 
+import LeftArrow from './assets/leftarrow.svg';
+import RightArrow from './assets/rightarrow.svg';
+
 function App() {
   const [isEditMode, setIsEditMode] = useState(true);
   const [cvInfo, setCvInfo] = useState({
@@ -44,38 +47,58 @@ function App() {
       <InfoContainer>
         {isEditMode ? (
           <div className='forms'>
-            <h1>CV Application</h1>
             <form onSubmit={handleSubmit}>
               {currentSection === 0 && (
-                <GeneralInfo
-                  generalInfo={cvInfo.generalInfo}
-                  onChange={(info) => handleInfoChange('generalInfo', info)}
-                />
+                <>
+                  <h1>General Info</h1>
+                  <GeneralInfo
+                    generalInfo={cvInfo.generalInfo}
+                    onChange={(info) => handleInfoChange('generalInfo', info)}
+                  />
+                </>
               )}
               {currentSection === 1 && (
-                <EducationalInfo
-                  educationalInfo={cvInfo.educationalInfo}
-                  onChange={(info) => handleInfoChange('educationalInfo', info)}
-                />
+                <>
+                  <h1>Educational Info</h1>
+                  <EducationalInfo
+                    educationalInfo={cvInfo.educationalInfo}
+                    onChange={(info) =>
+                      handleInfoChange('educationalInfo', info)
+                    }
+                  />
+                </>
               )}
               {currentSection === 2 && (
-                <PracticalInfo
-                  practicalInfo={cvInfo.practicalInfo}
-                  onChange={(info) => handleInfoChange('practicalInfo', info)}
-                />
+                <>
+                  <h1>Practical Experience</h1>
+                  <PracticalInfo
+                    practicalInfo={cvInfo.practicalInfo}
+                    onChange={(info) => handleInfoChange('practicalInfo', info)}
+                  />
+                </>
               )}
 
-              {currentSection > 0 && (
-                <button type='button' onClick={handlePreviousSection}>
-                  Previous
-                </button>
-              )}
-              {currentSection < 2 && (
-                <button type='button' onClick={handleNextSection}>
-                  Next
-                </button>
-              )}
-              {currentSection === 2 && <button type='submit'>Submit</button>}
+              <div className='buttons'>
+                {currentSection > 0 && (
+                  <button
+                    type='button'
+                    onClick={handlePreviousSection}
+                    className='paging'
+                  >
+                    <img src={LeftArrow} alt='' />
+                  </button>
+                )}
+                {currentSection < 2 && (
+                  <button
+                    type='button'
+                    onClick={handleNextSection}
+                    className='paging'
+                  >
+                    <img src={RightArrow} alt='' />
+                  </button>
+                )}
+                {currentSection === 2 && <button type='submit'>Submit</button>}
+              </div>
             </form>
           </div>
         ) : (
