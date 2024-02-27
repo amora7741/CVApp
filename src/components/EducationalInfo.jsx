@@ -23,10 +23,13 @@ function EducationalInfo({ educationalInfo, onChange }) {
         placeholder='Study Title'
       />
       <input
-        type='date'
+        type='text'
         name='studyStart'
         value={educationalInfo.studyStart || ''}
         onChange={handleChange}
+        placeholder='Start date'
+        onFocus={(e) => (e.target.type = 'date')}
+        onBlur={(e) => (e.target.type = 'text')}
       />
       <input
         type='date'
