@@ -3,6 +3,7 @@
 :root {
   --rounded-corners: 5px;
   --box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  --primary: #cc2b5e;
 }
 
 * {
@@ -46,7 +47,7 @@ button {
   justify-content: center;
   cursor: pointer;
   padding: 10px;
-  background-color: #cc2b5e;
+  background-color: var(--primary);
   color: white;
   border: none;
   border-radius: var(--rounded-corners);
@@ -65,10 +66,35 @@ button:hover {
 
 .buttons {
   display: flex;
-  gap: 5px;
+  gap: 10px;
   justify-content: center;
 }
 
 .paging {
   border-radius: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+form section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+input {
+  padding: 5px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid var(--primary);
+  transition: border-bottom 0.3s ease;
+  font-size: 1rem;
+}
+
+input:focus {
+  border-bottom: 1px solid black;
 }
