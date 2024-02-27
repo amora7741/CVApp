@@ -1,6 +1,16 @@
 import React from 'react';
 
 function DisplayInfo({ generalInfo, educationalInfo, practicalInfo }) {
+  const renderResponsibilities = (responsibilities) => {
+    const responsibilitiesArray = responsibilities
+      .split(',')
+      .map((item) => item.trim());
+
+    return responsibilitiesArray.map((responsibility, index) => (
+      <li key={index}>{responsibility}</li>
+    ));
+  };
+
   return (
     <div className='cvpage'>
       <header>
@@ -38,9 +48,7 @@ function DisplayInfo({ generalInfo, educationalInfo, practicalInfo }) {
               {practicalInfo.startDate} to {practicalInfo.endDate}
             </em>
           </p>
-          <ul>
-            <li>{practicalInfo.responsibilities}</li>
-          </ul>
+          <ul>{renderResponsibilities(practicalInfo.responsibilities)}</ul>
         </div>
       </main>
     </div>

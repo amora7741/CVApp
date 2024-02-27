@@ -39,7 +39,9 @@ function PracticalInfo({ practicalInfo, onChange }) {
           onChange={handleChange}
           required
         />
-        <label htmlFor='responsibilities'>Responsibilities</label>
+        <label htmlFor='responsibilities'>
+          Responsibilities (comma separated)
+        </label>
       </div>
       <div className='fieldholder'>
         <input
