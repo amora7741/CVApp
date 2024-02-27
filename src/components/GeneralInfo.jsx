@@ -10,27 +10,39 @@ function GeneralInfo({ generalInfo, onChange }) {
 
   return (
     <section className='generalInfo'>
-      <input
-        type='text'
-        name='name'
-        value={generalInfo.name || ''}
-        onChange={handleChange}
-        placeholder='Name'
-      />
-      <input
-        type='email'
-        name='email'
-        value={generalInfo.email || ''}
-        onChange={handleChange}
-        placeholder='Email'
-      />
-      <input
-        type='tel'
-        name='phone'
-        value={generalInfo.phone || ''}
-        onChange={handleChange}
-        placeholder='Phone'
-      />
+      <div className='fieldholder'>
+        <input
+          id='name'
+          type='text'
+          name='name'
+          value={generalInfo.name || ''}
+          onChange={handleChange}
+          required
+        />
+        <label htmlFor='name'>Name</label>
+      </div>
+      <div className='fieldholder'>
+        <input
+          id='email'
+          type='email'
+          name='email'
+          value={generalInfo.email || ''}
+          onChange={handleChange}
+          required
+        />
+        <label htmlFor='email'>Email</label>
+      </div>
+      <div className='fieldholder'>
+        <input
+          id='phone'
+          type='tel'
+          name='phone'
+          value={generalInfo.phone || ''}
+          onChange={handleChange}
+          required
+        />
+        <label htmlFor='phone'>Phone Number</label>
+      </div>
     </section>
   );
 }
