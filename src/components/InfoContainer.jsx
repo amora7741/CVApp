@@ -1,7 +1,7 @@
 import React from 'react';
 
-function InfoContainer({ children }) {
-  return <div className='infoContainer'>{children}</div>;
+function InfoContainer({ className, children }) {
+  return <div className={`infoContainer ${className}`}>{children}</div>;
 }
 
 export default InfoContainer;

@@ -10,6 +10,7 @@ import LeftArrow from './assets/leftarrow.svg';
 import RightArrow from './assets/rightarrow.svg';
 
 function App() {
+  const [fadeIn, setFadeIn] = useState(false);
   const [isEditMode, setIsEditMode] = useState(true);
   const [cvInfo, setCvInfo] = useState({
     generalInfo: {},
@@ -18,8 +19,14 @@ function App() {
   });
   const [currentSection, setCurrentSection] = useState(0);
 
+  const toggleFadeIn = () => {
+    setFadeIn(true);
+    setTimeout(() => setFadeIn(false), 700);
+  };
+
   const toggleEditMode = () => {
     setIsEditMode(!isEditMode);
+    toggleFadeIn();
   };
 
   const handleInfoChange = (section, info) => {
@@ -32,19 +39,22 @@ function App() {
   const handleSubmit = (event) => {
     event.preventDefault();
     setIsEditMode(false);
+    toggleFadeIn();
   };
 
   const handleNextSection = () => {
     setCurrentSection(currentSection + 1);
+    toggleFadeIn();
   };
 
   const handlePreviousSection = () => {
     setCurrentSection(currentSection - 1);
+    toggleFadeIn();
   };
 
   return (
     <>
-      <InfoContainer>
+      <InfoContainer className={fadeIn ? 'fadein' : ''}>
         {isEditMode ? (
           <form onSubmit={handleSubmit}>
             {currentSection === 0 && (
