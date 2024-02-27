@@ -17,10 +17,15 @@ function DisplayInfo({ generalInfo, educationalInfo, practicalInfo }) {
       <main>
         <div className='infosection'>
           <h3 className='pink separator'>Educational Information</h3>
-          <p>School Name: {educationalInfo.schoolName}</p>
-          <p>Study Title: {educationalInfo.studyTitle}</p>
-          <p>Start Date: {educationalInfo.studyStart}</p>
-          <p>End Date: {educationalInfo.studyEnd}</p>
+          <p>
+            <b>{educationalInfo.studyTitle}</b> <span className='pink'>◆</span>{' '}
+            <em>{educationalInfo.schoolName}</em>
+          </p>
+          <p>
+            <em>
+              {educationalInfo.studyStart} - {educationalInfo.studyEnd}
+            </em>
+          </p>
         </div>
         <div className='infosection'>
           <h3 className='pink separator'>Practical Experience</h3>
