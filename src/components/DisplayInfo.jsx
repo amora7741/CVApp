@@ -15,15 +15,15 @@ function DisplayInfo({ generalInfo, educationalInfo, practicalInfo }) {
       </header>
 
       <main>
-        <div>
-          <h3>Educational Information</h3>
+        <div className='infosection'>
+          <h3 className='pink separator'>Educational Information</h3>
           <p>School Name: {educationalInfo.schoolName}</p>
           <p>Study Title: {educationalInfo.studyTitle}</p>
           <p>Start Date: {educationalInfo.studyStart}</p>
           <p>End Date: {educationalInfo.studyEnd}</p>
         </div>
-        <div>
-          <h3>Practical Experience</h3>
+        <div className='infosection'>
+          <h3 className='pink separator'>Practical Experience</h3>
           <p>Company Name: {practicalInfo.companyName}</p>
           <p>Position Title: {practicalInfo.positionTitle}</p>
           <p>Responsibilities: {practicalInfo.responsibilities}</p>

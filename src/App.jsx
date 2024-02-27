@@ -98,10 +98,12 @@ function App() {
             </div>
           </form>
         ) : (
-          <div className='cvContainer'>
+          <>
             <DisplayInfo {...cvInfo} />
-            <button onClick={toggleEditMode}>Edit</button>
-          </div>
+            <button onClick={toggleEditMode} id='edit'>
+              Edit
+            </button>
+          </>
         )}
       </InfoContainer>
     </>
