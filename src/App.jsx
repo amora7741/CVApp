@@ -2,7 +2,7 @@ import { useState } from 'react';
 import './App.css';
 import GeneralInfo from './components/GeneralInfo';
 import EducationalInfo from './components/EducationalInfo'; // Uncomment this
-// import PracticalExperience from './components/PracticalExperience'; // Uncomment this
+import PracticalInfo from './components/PracticalInfo'; // Uncomment this
 import DisplayInfo from './components/DisplayInfo';
 import InfoContainer from './components/InfoContainer';
 
@@ -11,7 +11,7 @@ function App() {
   const [cvInfo, setCvInfo] = useState({
     generalInfo: {},
     educationalInfo: {},
-    practicalExperience: {},
+    practicalInfo: {},
   });
   const [currentSection, setCurrentSection] = useState(0);
 
@@ -59,11 +59,9 @@ function App() {
                 />
               )}
               {currentSection === 2 && (
-                <PracticalExperience
-                  practicalExperience={cvInfo.practicalExperience}
-                  onChange={(info) =>
-                    handleInfoChange('practicalExperience', info)
-                  }
+                <PracticalInfo
+                  practicalInfo={cvInfo.practicalInfo}
+                  onChange={(info) => handleInfoChange('practicalInfo', info)}
                 />
               )}
 
